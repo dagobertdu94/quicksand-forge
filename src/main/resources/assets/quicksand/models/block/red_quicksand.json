@@ -1,7 +1,7 @@
 {
     "parent": "block/block",
     "textures": {
-        "texture": "minecraft:block/amethyst_block",
+        "texture": "quicksand:block/red_quicksand",
         "particle": "#texture"
     },
     "elements": [
