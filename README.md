@@ -4,7 +4,7 @@
 
 This is the Forge version of Quicksand, licensed under LGPLv3, please support the original work!
 
-Original Fabric version can be found here: [Quicksand (Fabric)](https://github.com/Shnupbups/quicksand)
+Original Fabric version can be found here: **[Quicksand (Fabric)](https://github.com/Shnupbups/quicksand)**
 
 This mod will always be maintained on Forge's Active and LTS versions, please find support elsewhere for other versions.
 
