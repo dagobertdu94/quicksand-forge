@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "alexsmobs:anaconda",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:bone_serpent",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:bone_serpent_part",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:rattlesnake",
+      "required": false
+    }
+  ]
+}

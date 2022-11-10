@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="LGPLv3"
+issueTrackerURL="https://github.com/ChannelingMC/quicksand-forge/issues/"
+
+[[mods]]
+    modId="quicksand"
+    version="${version}"
+    displayName="Quicksand"
+    #updateJSONURL="https://change.me.example.invalid/updates.json"
+    displayURL="https://www.curseforge.com/minecraft/mc-mods/quicksand-forge"
+    logoFile="pack.png"
+    credits="Thanks Shnupbups and LambdAurora for the original work!"
+    authors="LimonBlaze"
+    description="Adds Quicksand. That's it."
+
+[[dependencies.create_enchantment_industry]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43.1,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.create_enchantment_industry]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"

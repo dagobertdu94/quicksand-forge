@@ -2,11 +2,11 @@
   "replace": false,
   "values": [
     "minecraft:iron_golem",
-    "minecraft:skeleton",
-    "minecraft:stray",
-    "minecraft:zombified_piglin",
-    "minecraft:zoglin",
-    "minecraft:zombie",
-    "minecraft:husk"
+    "#forge:centipedes",
+    "#forge:worms",
+    {
+      "id": "alexsmobs:guster",
+      "required": false
+    }
   ]
 }

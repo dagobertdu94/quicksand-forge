@@ -1,16 +1,21 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.shnupbups.quicksand.mixin",
+  "refmap": "quicksand.refmap.json",
+  "package": "com.github.channelingmc.quicksand.core.mixin",
+  "plugin": "com.github.channelingmc.quicksand.core.QuicksandMixinPlugin",
   "compatibilityLevel": "JAVA_17",
+  "mixinPriority": 900,
   "mixins": [
-    "EntityMixin",
-    "HuskEntityMixin",
-    "LivingEntityMixin",
-    "ZombieEntityMixin"
+    "common.DrownedMixin",
+    "common.EntityMixin",
+    "common.HuskMixin",
+    "common.LivingEntityMixin",
+    "common.ZombieMixin"
   ],
   "client": [
-    "client.ZombieBaseEntityRendererMixin"
+    "client.AbstractZombieRendererMixin",
+    "client.CameraMixin"
   ],
   "injectors": {
     "defaultRequire": 1
