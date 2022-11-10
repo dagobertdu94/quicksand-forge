@@ -14,14 +14,14 @@ issueTrackerURL="https://github.com/ChannelingMC/quicksand-forge/issues/"
     authors="LimonBlaze"
     description="Adds Quicksand. That's it."
 
-[[dependencies.create_enchantment_industry]]
+[[dependencies.quicksand]]
     modId="forge"
     mandatory=true
     versionRange="[43.1,)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.create_enchantment_industry]]
+[[dependencies.quicksand]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.19.2,1.20)"
