@@ -1,5 +1,11 @@
 # Quicksand (Forge)
 
+<img align="right" width="160" src="src/main/resources/pack.png">
+
+[![CurseForge Downloads](https://cf.way2muchnoise.eu/full_700411_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/quicksand-forge)
+[![Minecraft Versions](https://cf.way2muchnoise.eu/versions/700411.svg)](https://curseforge.com/minecraft/mc-mods/quicksand-forge)
+
+
 ## Disclaimer
 
 This is the Forge version of Quicksand, licensed under LGPLv3, please support the original work!
