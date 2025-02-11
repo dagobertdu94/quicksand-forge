@@ -24,7 +24,7 @@ import java.util.Map;
 public class QuicksandAPI {
     
     public static final String ID = "quicksand";
-    public static final DeferredRegister<DamageType> DAMAGE_TYPES = DeferredRegister.create(Registries.DAMAGE_TYPE, ID);
+    public static final DeferredRegister<DamageType> DAMAGE_TYPES = DeferredRegister.create(Registries.DAMAGE_TYPE, "minecraft");
     public static final RegistryObject<DamageType> QUICKSAND_DAMAGE = DAMAGE_TYPES.register("quicksand", () -> new DamageType("quicksand", DamageScaling.NEVER, 0f));
     
     //public static final DamageSource QUICKSAND_DMGSRC = new DamageSource("quicksand").bypassArmor();
