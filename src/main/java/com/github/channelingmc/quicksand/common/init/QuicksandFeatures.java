@@ -29,39 +29,39 @@ public class QuicksandFeatures {
     @SubscribeEvent
     public static void register(RegisterEvent event) {
         event.register(ForgeRegistries.Keys.FEATURES, QuicksandAPI.QUICKSAND_LAKE.getId(), QuicksandLakeFeature::new);
+        
+        if (event.getRegistryKey() == ForgeRegistries.Keys.FEATURES) {
+                QuicksandAPI.QUICKSAND_LAKE_CF = registerConfiguredFeature("quicksand_lake",
+                    QuicksandAPI.QUICKSAND_LAKE.get(),
+                    new QuicksandLakeFeature.Configuration(
+                        BlockStateProvider.simple(QuicksandBlocks.QUICKSAND.get().defaultBlockState()),
+                        BlockStateProvider.simple(Blocks.SAND.defaultBlockState())
+                    ));
+                QuicksandAPI.RED_QUICKSAND_LAKE_CF = registerConfiguredFeature("red_quicksand_lake",
+                    QuicksandAPI.QUICKSAND_LAKE.get(),
+                    new QuicksandLakeFeature.Configuration(
+                        BlockStateProvider.simple(QuicksandBlocks.RED_QUICKSAND.get().defaultBlockState()),
+                        BlockStateProvider.simple(Blocks.RED_SAND.defaultBlockState())
+                    ));
+                QuicksandAPI.QUICKSAND_LAKE_PF = registerPlacedFeature("quicksand_lake",
+                    QuicksandAPI.QUICKSAND_LAKE_CF,
+                    RarityFilter.onAverageOnceEvery(QuicksandConfigs.COMMON.quicksandLakeRarity.get()),
+                    InSquarePlacement.spread(),
+                    PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                    BiomeFilter.biome()
+                );
+                QuicksandAPI.RED_QUICKSAND_LAKE_PF = registerPlacedFeature("red_quicksand_lake",
+                    QuicksandAPI.RED_QUICKSAND_LAKE_CF,
+                    RarityFilter.onAverageOnceEvery(QuicksandConfigs.COMMON.redQuicksandLakeRarity.get()),
+                    InSquarePlacement.spread(),
+                    PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                    BiomeFilter.biome()
+                );
+            }
     }
     
     @SubscribeEvent
-    public static void registerGeneration(FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            QuicksandAPI.QUICKSAND_LAKE_CF = registerConfiguredFeature("quicksand_lake",
-                QuicksandAPI.QUICKSAND_LAKE.get(),
-                new QuicksandLakeFeature.Configuration(
-                    BlockStateProvider.simple(QuicksandBlocks.QUICKSAND.get().defaultBlockState()),
-                    BlockStateProvider.simple(Blocks.SAND.defaultBlockState())
-                ));
-            QuicksandAPI.RED_QUICKSAND_LAKE_CF = registerConfiguredFeature("red_quicksand_lake",
-                QuicksandAPI.QUICKSAND_LAKE.get(),
-                new QuicksandLakeFeature.Configuration(
-                    BlockStateProvider.simple(QuicksandBlocks.RED_QUICKSAND.get().defaultBlockState()),
-                    BlockStateProvider.simple(Blocks.RED_SAND.defaultBlockState())
-                ));
-            QuicksandAPI.QUICKSAND_LAKE_PF = registerPlacedFeature("quicksand_lake",
-                QuicksandAPI.QUICKSAND_LAKE_CF,
-                RarityFilter.onAverageOnceEvery(QuicksandConfigs.COMMON.quicksandLakeRarity.get()),
-                InSquarePlacement.spread(),
-                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                BiomeFilter.biome()
-            );
-            QuicksandAPI.RED_QUICKSAND_LAKE_PF = registerPlacedFeature("red_quicksand_lake",
-                QuicksandAPI.RED_QUICKSAND_LAKE_CF,
-                RarityFilter.onAverageOnceEvery(QuicksandConfigs.COMMON.redQuicksandLakeRarity.get()),
-                InSquarePlacement.spread(),
-                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                BiomeFilter.biome()
-            );
-        });
-    }
+    public static void registerGeneration(FMLCommonSetupEvent event) {}
     
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registries.PLACED_FEATURE, QuicksandAPI.ID);
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registries.CONFIGURED_FEATURE, QuicksandAPI.ID);
