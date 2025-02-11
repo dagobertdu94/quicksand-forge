@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # This is an example mods.toml file. It contains the data relating to the loading mods.
 # There are several mandatory fields (#mandatory), and many more that are optional (#optional).
 # The overall format is standard TOML format, v0.5.0.
@@ -72,34 +71,3 @@ description='''${mod_description}'''
 # stop your mod loading on the server for example.
 #[features.${mod_id}]
 #openGLVersion="[3.2,)"
-=======
-modLoader="javafml"
-loaderVersion="[43,)"
-license="LGPLv3"
-issueTrackerURL="https://github.com/ChannelingMC/quicksand-forge/issues/"
-
-[[mods]]
-    modId="quicksand"
-    version="${version}"
-    displayName="Quicksand"
-    #updateJSONURL="https://change.me.example.invalid/updates.json"
-    displayURL="https://www.curseforge.com/minecraft/mc-mods/quicksand-forge"
-    logoFile="pack.png"
-    credits="Thanks Shnupbups and LambdAurora for the original work!"
-    authors="LimonBlaze"
-    description="Adds Quicksand. That's it."
-
-[[dependencies.quicksand]]
-    modId="forge"
-    mandatory=true
-    versionRange="[43.1,)"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.quicksand]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.19.2,1.20)"
-    ordering="NONE"
-    side="BOTH"
->>>>>>> branch 'master' of git@github.com:dagobertdu94/quicksand-forge.git
