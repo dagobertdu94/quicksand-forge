@@ -38,7 +38,6 @@ public class QuicksandBlocks {
             BlockBehaviour.Properties.copy(Blocks.CAULDRON),
             QuicksandAPI.RED_QUICKSAND_BUCKET,
             QuicksandAPI.RED_QUICKSAND_INTERACTIONS));
-	
     
     @SubscribeEvent
     public static void setup(FMLCommonSetupEvent event) {
