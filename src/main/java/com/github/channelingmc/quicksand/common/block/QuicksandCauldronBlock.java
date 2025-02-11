@@ -1,6 +1,8 @@
 package com.github.channelingmc.quicksand.common.block;
 
 import com.github.channelingmc.quicksand.common.QuicksandConfigs;
+import com.github.channelingmc.quicksand.common.init.QuicksandBlocks;
+
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
@@ -88,7 +90,7 @@ public class QuicksandCauldronBlock extends AbstractCauldronBlock {
             ));
     }
     
-    public InteractionResult renewFromSand(BlockState blockState, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
+    public static InteractionResult renewFromSand(BlockState blockState, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack) {
         if (blockState.is(Blocks.WATER_CAULDRON) &&
             blockState.getValue(LayeredCauldronBlock.LEVEL) == 1)
         {
@@ -97,7 +99,7 @@ public class QuicksandCauldronBlock extends AbstractCauldronBlock {
                 player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, new ItemStack(Items.BUCKET)));
                 player.awardStat(Stats.FILL_CAULDRON);
                 player.awardStat(Stats.ITEM_USED.get(item));
-                level.setBlockAndUpdate(pos, this.defaultBlockState());
+                level.setBlockAndUpdate(pos, (item == Items.RED_SAND ? QuicksandBlocks.RED_QUICKSAND_CAULDRON : QuicksandBlocks.QUICKSAND_CAULDRON).get().defaultBlockState());
                 level.playSound(null, pos, SoundEvents.SAND_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
             return InteractionResult.sidedSuccess(level.isClientSide);

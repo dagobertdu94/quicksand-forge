@@ -42,8 +42,8 @@ public class QuicksandBlocks {
     @SubscribeEvent
     public static void register(InterModEnqueueEvent event) {
     	if (QuicksandConfigs.COMMON.quicksandRenewable.get()) {
-            CauldronInteraction.WATER.put(Items.SAND, ((QuicksandCauldronBlock)QUICKSAND_CAULDRON.get())::renewFromSand);
-            CauldronInteraction.WATER.put(Items.RED_SAND, ((QuicksandCauldronBlock)RED_QUICKSAND_CAULDRON.get())::renewFromSand);
+            CauldronInteraction.WATER.put(Items.SAND, QuicksandCauldronBlock::renewFromSand);
+            CauldronInteraction.WATER.put(Items.RED_SAND, QuicksandCauldronBlock::renewFromSand);
         }
     }
     
