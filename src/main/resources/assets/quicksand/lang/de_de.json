@@ -2,9 +2,9 @@
   "block.quicksand.quicksand": "Treibsand",
   "item.quicksand.quicksand_bucket": "Treibsandeimer",
   "block.quicksand.quicksand_cauldron": "Treibsandkessel",
-  "block.quicksand.red_quicksand": "Roter Treibsand",
   "item.quicksand.red_quicksand_bucket": "Roter Treibsandeimer",
   "block.quicksand.red_quicksand_cauldron": "Roter Treibsandkessel",
+  "block.quicksand.red_quicksand": "Roter Treibsand",
   "death.attack.quicksand": "%s versank in Treibsand",
   "subtitles.entity.zombie.converted_to_husk": "Zombie wird zu Wüstenzombie",
   "subtitles.entity.drowned.converted_to_zombie": "Ertrunkener wird zu Zombie"
