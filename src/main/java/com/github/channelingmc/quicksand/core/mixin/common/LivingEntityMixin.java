@@ -23,7 +23,7 @@ public abstract class LivingEntityMixin extends Entity implements QuicksandSubme
 	@Shadow
 	protected boolean jumping;
 
-	private LivingEntityMixin(EntityType<?> type, Level world) {
+	private LivingEntityMixin(EntityType<? extends LivingEntity> type, Level world) {
 		super(type, world);
 	}
 
@@ -54,7 +54,7 @@ public abstract class LivingEntityMixin extends Entity implements QuicksandSubme
 	
 	@ModifyExpressionValue(method = "baseTick", at = @At(value = "FIELD", target = "Lnet/minecraft/world/damagesource/DamageSource;DROWN:Lnet/minecraft/world/damagesource/DamageSource;"))
 	private DamageSource baseTick$modifyQuicksandDrownDamageSource(DamageSource original) {
-		return this.isSubmergedInQuicksand() ? QuicksandAPI.QUICKSAND_DMGSRC : original;
+		return this.isSubmergedInQuicksand() ? new DamageSource(QuicksandAPI.QUICKSAND_DAMAGE.getHolder().get()) : original;
 	}
 	
 }

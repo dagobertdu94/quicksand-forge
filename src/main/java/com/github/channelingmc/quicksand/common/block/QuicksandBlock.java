@@ -13,6 +13,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -109,7 +110,7 @@ public class QuicksandBlock extends SandBlock implements BucketPickup {
 				((QuicksandSubmergingEntity)entity).isSubmergedInQuicksand() &&
 				!canSurviveInQuicksand(living))
 			{
-				living.hurt(QuicksandAPI.QUICKSAND_DMGSRC, 1F);
+				living.hurt(new DamageSource(QuicksandAPI.QUICKSAND_DAMAGE.getHolder().get()), 1F);
 			}
 			if(world.getRandom().nextBoolean())
 				spawnParticles(world, state, new Vec3(entity.getX(), pos.getY(), entity.getZ()));

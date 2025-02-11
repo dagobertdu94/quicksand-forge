@@ -14,10 +14,10 @@ public class QuicksandSoundEvents {
     public static void register(RegisterEvent event) {
         event.register(ForgeRegistries.Keys.SOUND_EVENTS, helper -> {
             helper.register(QuicksandAPI.ZOMBIE_CONVERTS_TO_HUSK.getId(),
-                new SoundEvent(QuicksandAPI.ZOMBIE_CONVERTS_TO_HUSK.getId())
+                SoundEvent.createVariableRangeEvent(QuicksandAPI.ZOMBIE_CONVERTS_TO_HUSK.getId())
             );
             helper.register(QuicksandAPI.DROWNED_CONVERTS_TO_ZOMBIE.getId(),
-                new SoundEvent(QuicksandAPI.DROWNED_CONVERTS_TO_ZOMBIE.getId())
+            	SoundEvent.createVariableRangeEvent(QuicksandAPI.DROWNED_CONVERTS_TO_ZOMBIE.getId())
             );
         });
     }

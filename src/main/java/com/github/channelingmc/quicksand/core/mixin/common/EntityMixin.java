@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = Entity.class, priority = 900)
 public abstract class EntityMixin implements QuicksandSubmergingEntity {
     
-    @Shadow public abstract Level getLevel();
+    @Shadow public abstract Level level();
     
     @Shadow public abstract int getBlockX();
     
@@ -28,7 +28,6 @@ public abstract class EntityMixin implements QuicksandSubmergingEntity {
     
     @Shadow public abstract BlockPos getOnPos();
     
-    @Shadow public Level level;
     private boolean submergedInQuicksand;
     
     @Override
@@ -38,8 +37,9 @@ public abstract class EntityMixin implements QuicksandSubmergingEntity {
     
     @Override
     public void updateSubmergedInQuicksand() {
-        this.submergedInQuicksand = this.getLevel()
-            .getBlockState(new BlockPos(this.getBlockX(), this.getEyeY() - 0.11111111F, this.getBlockZ()))
+    	float f = (float)(this.getEyeY() - 0.11111111F);
+        this.submergedInQuicksand = this.level()
+            .getBlockState(new BlockPos(this.getBlockX(), (int)f, this.getBlockZ()))
             .is(QuicksandTags.QUICKSAND);
     }
     
@@ -52,7 +52,7 @@ public abstract class EntityMixin implements QuicksandSubmergingEntity {
     private boolean move$checkIsOnQuicksand(boolean original) {
         if (original) return true;
         BlockPos blockpos = this.getOnPos();
-        BlockState blockstate = this.level.getBlockState(blockpos);
+        BlockState blockstate = this.level().getBlockState(blockpos);
         return blockstate.is(QuicksandTags.QUICKSAND);
     }
     

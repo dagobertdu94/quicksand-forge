@@ -32,10 +32,12 @@ import java.util.function.Supplier;
 public class QuicksandCauldronBlock extends AbstractCauldronBlock {
     
     protected final Supplier<? extends Item> bucket;
+    private final Map<Item, CauldronInteraction> inte;
     
     public QuicksandCauldronBlock(Properties properties, Supplier<? extends Item> bucket, Map<Item, CauldronInteraction> interactions) {
         super(properties, interactions);
         this.bucket = bucket;
+        this.inte = interactions;
     }
     
     @Override
@@ -70,7 +72,7 @@ public class QuicksandCauldronBlock extends AbstractCauldronBlock {
     }
     
     public void registerEmptyFillInteractions() {
-        this.interactions.put(Items.BUCKET, (blockState, level, pos, player, hand, stack) ->
+        this.inte.put(Items.BUCKET, (blockState, level, pos, player, hand, stack) ->
             CauldronInteraction.fillBucket(
                 blockState, level, pos, player, hand, stack,
                 this.bucket.get().getDefaultInstance(),

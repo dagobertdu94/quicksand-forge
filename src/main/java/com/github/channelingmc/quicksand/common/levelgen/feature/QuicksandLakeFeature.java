@@ -13,7 +13,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.material.Material;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -83,11 +82,11 @@ public class QuicksandLakeFeature extends Feature<QuicksandLakeFeature.Configura
                             y > 0 && gen[(x * 16 + z) * 8 + (y - 1)]
                         );
                         if (flag) {
-                            Material material = worldgenlevel.getBlockState(pos.offset(x, y, z)).getMaterial();
-                            if (y >= 4 && material.isLiquid()) {
+                            BlockState bs = worldgenlevel.getBlockState(pos.offset(x, y, z));
+                            if (y >= 4 && bs.liquid()) {
                                 return false;
                             }
-                            if (y < 4 && !material.isSolid() && worldgenlevel.getBlockState(pos.offset(x, y, z)) != quickSand) {
+                            if (y < 4 && !bs.isSolid() && worldgenlevel.getBlockState(pos.offset(x, y, z)) != quickSand) {
                                 return false;
                             }
                         }
@@ -128,7 +127,7 @@ public class QuicksandLakeFeature extends Feature<QuicksandLakeFeature.Configura
                             );
                             if (flag && (y < 4 || randomsource.nextInt(2) != 0)) {
                                 BlockState blockstate = worldgenlevel.getBlockState(pos.offset(x, y, z));
-                                if (blockstate.getMaterial().isSolid() && !blockstate.is(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE)) {
+                                if (blockstate.isSolid() && !blockstate.is(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE)) {
                                     BlockPos genPos = pos.offset(x, y, z);
                                     worldgenlevel.setBlock(genPos, barrier, 2);
                                     this.markAboveForPostProcessing(worldgenlevel, genPos);
