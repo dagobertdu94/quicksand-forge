@@ -29,7 +29,7 @@ public class QuicksandFeatures {
     @SubscribeEvent
     public static void register(RegisterEvent event) {
         event.register(ForgeRegistries.Keys.FEATURES, QuicksandAPI.QUICKSAND_LAKE.getId(), QuicksandLakeFeature::new);
-        
+        /*
         if (event.getRegistryKey() == ForgeRegistries.Keys.FEATURES) {
                 QuicksandAPI.QUICKSAND_LAKE_CF = registerConfiguredFeature("quicksand_lake",
                     QuicksandAPI.QUICKSAND_LAKE.get(),
@@ -57,7 +57,7 @@ public class QuicksandFeatures {
                     PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                     BiomeFilter.biome()
                 );
-            }
+            }*/
     }
     
     @SubscribeEvent
