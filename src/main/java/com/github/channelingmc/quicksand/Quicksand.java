@@ -22,8 +22,8 @@ public class Quicksand {
 		
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		
-		modBus.register(QuicksandItems.ITEMS);
 		modBus.register(QuicksandBlocks.BLOCKS);
+		modBus.register(QuicksandItems.ITEMS);
 	}
 	
 }
