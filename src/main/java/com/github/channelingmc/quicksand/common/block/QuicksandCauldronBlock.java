@@ -38,6 +38,8 @@ public class QuicksandCauldronBlock extends AbstractCauldronBlock {
         super(properties, interactions);
         this.bucket = bucket;
         this.inte = interactions;
+        
+        registerEmptyFillInteractions();
     }
     
     @Override

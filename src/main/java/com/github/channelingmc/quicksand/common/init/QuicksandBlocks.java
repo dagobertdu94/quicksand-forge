@@ -4,6 +4,8 @@ import com.github.channelingmc.quicksand.api.QuicksandAPI;
 import com.github.channelingmc.quicksand.common.QuicksandConfigs;
 import com.github.channelingmc.quicksand.common.block.QuicksandBlock;
 import com.github.channelingmc.quicksand.common.block.QuicksandCauldronBlock;
+import com.github.channelingmc.quicksand.common.levelgen.feature.QuicksandLakeFeature;
+
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -40,15 +42,11 @@ public class QuicksandBlocks {
             QuicksandAPI.RED_QUICKSAND_INTERACTIONS));
     
     @SubscribeEvent
-    public static void setup(FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            ((QuicksandCauldronBlock)QUICKSAND_CAULDRON.get()).registerEmptyFillInteractions();
-            ((QuicksandCauldronBlock)RED_QUICKSAND_CAULDRON.get()).registerEmptyFillInteractions();
-            if (QuicksandConfigs.COMMON.quicksandRenewable.get()) {
-                CauldronInteraction.WATER.put(Items.SAND, ((QuicksandCauldronBlock)QUICKSAND_CAULDRON.get())::renewFromSand);
-                CauldronInteraction.WATER.put(Items.RED_SAND, ((QuicksandCauldronBlock)RED_QUICKSAND_CAULDRON.get())::renewFromSand);
-            }
-        });
+    public static void register(FMLCommonSetupEvent event) {
+    	if (QuicksandConfigs.COMMON.quicksandRenewable.get()) {
+            CauldronInteraction.WATER.put(Items.SAND, ((QuicksandCauldronBlock)QUICKSAND_CAULDRON.get())::renewFromSand);
+            CauldronInteraction.WATER.put(Items.RED_SAND, ((QuicksandCauldronBlock)RED_QUICKSAND_CAULDRON.get())::renewFromSand);
+        }
     }
     
 }
