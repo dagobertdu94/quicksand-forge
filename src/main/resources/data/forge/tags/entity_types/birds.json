@@ -1,0 +1,51 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:chicken",
+    "minecraft:parrot",
+    {
+      "id": "alexsmobs:bald_eagle",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:crow",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:emu",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:hummingbird",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:potoo",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:roadrunner",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:seagull",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:shoebill",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:soul_vulture",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:sunbird",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:toucan",
+      "required": false
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # eclipse
 bin
 *.launch
@@ -23,3 +24,30 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
+=======
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# fabric
+
+run/
+>>>>>>> branch 'master' of git@github.com:dagobertdu94/quicksand-forge.git

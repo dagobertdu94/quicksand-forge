@@ -1,8 +1,15 @@
 {
   "pack": {
+<<<<<<< HEAD
     "description": {
       "text": "${mod_id} resources"
     },
     "pack_format": 15
+=======
+    "description": "Quicksand - Resources",
+    "pack_format": 10,
+    "forge:resource_pack_format": 9,
+    "forge:data_pack_format": 10
+>>>>>>> branch 'master' of git@github.com:dagobertdu94/quicksand-forge.git
   }
 }

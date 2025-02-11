@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#quicksand:has_feature/red_quicksand_lake",
+  "features": "quicksand:red_quicksand_lake",
+  "step": "lakes"
+}

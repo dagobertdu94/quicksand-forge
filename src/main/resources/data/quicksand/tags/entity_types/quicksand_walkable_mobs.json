@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:husk",
+    "minecraft:rabbit",
+    "minecraft:allay",
+    "minecraft:vex",
+    "#forge:birds",
+    "#forge:frogs",
+    "#forge:insects",
+    "#forge:snakes",
+    "#forge:spiders",
+    {
+      "id": "alexsmobs:guster",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:jerboa",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:sugar_glider",
+      "required": false
+    }
+  ]
+}
