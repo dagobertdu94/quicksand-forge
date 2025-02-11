@@ -22,7 +22,6 @@ public class Quicksand {
 		
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		
-		modBus.register(QuicksandAPI.DAMAGE_TYPES);
 		modBus.register(QuicksandItems.ITEMS);
 		modBus.register(QuicksandBlocks.BLOCKS);
 	}
