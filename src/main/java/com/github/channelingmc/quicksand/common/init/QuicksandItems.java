@@ -24,7 +24,7 @@ public class QuicksandItems {
 			QuicksandBlocks.QUICKSAND.get(),
             SoundEvents.SAND_PLACE,
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-	public static final RegistryObject<Item> RED_QUICKSAND_BUCKET = ITEMS.register("quicksand_bucket", () -> new SolidBucketItem(
+	public static final RegistryObject<Item> RED_QUICKSAND_BUCKET = ITEMS.register("red_quicksand_bucket", () -> new SolidBucketItem(
             QuicksandBlocks.RED_QUICKSAND.get(),
             SoundEvents.SAND_PLACE,
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));

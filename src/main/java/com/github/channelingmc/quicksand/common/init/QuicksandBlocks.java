@@ -34,7 +34,7 @@ public class QuicksandBlocks {
             BlockBehaviour.Properties.copy(Blocks.CAULDRON),
             QuicksandItems.QUICKSAND_BUCKET,
             QuicksandAPI.QUICKSAND_INTERACTIONS));
-	public static final RegistryObject<Block> RED_QUICKSAND_CAULDRON = BLOCKS.register("red_quicksand", () -> new QuicksandCauldronBlock(
+	public static final RegistryObject<Block> RED_QUICKSAND_CAULDRON = BLOCKS.register("red_quicksand_cauldron", () -> new QuicksandCauldronBlock(
             BlockBehaviour.Properties.copy(Blocks.CAULDRON),
             QuicksandItems.RED_QUICKSAND_BUCKET,
             QuicksandAPI.RED_QUICKSAND_INTERACTIONS));
