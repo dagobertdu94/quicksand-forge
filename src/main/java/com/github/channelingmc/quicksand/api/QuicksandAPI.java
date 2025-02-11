@@ -35,11 +35,6 @@ public class QuicksandAPI {
         CauldronInteraction.newInteractionMap();
     
     
-    public static final RegistryObject<SolidBucketItem> QUICKSAND_BUCKET =
-        RegistryObject.create(loc("quicksand_bucket"), ForgeRegistries.ITEMS);
-    public static final RegistryObject<SolidBucketItem> RED_QUICKSAND_BUCKET =
-        RegistryObject.create(loc("red_quicksand_bucket"), ForgeRegistries.ITEMS);
-    
     public static final RegistryObject<SoundEvent> ZOMBIE_CONVERTS_TO_HUSK =
         RegistryObject.create(loc("entity.zombie.converted_to_husk"), ForgeRegistries.SOUND_EVENTS);
     public static final RegistryObject<SoundEvent> DROWNED_CONVERTS_TO_ZOMBIE =

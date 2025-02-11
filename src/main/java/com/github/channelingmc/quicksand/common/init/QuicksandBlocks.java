@@ -25,18 +25,18 @@ public class QuicksandBlocks {
 	public static final RegistryObject<Block> QUICKSAND = BLOCKS.register("quicksand", () -> new QuicksandBlock(
                 BlockBehaviour.Properties.copy(Blocks.SAND),
                 14406560,
-                QuicksandAPI.QUICKSAND_BUCKET));
+                QuicksandItems.QUICKSAND_BUCKET));
 	public static final RegistryObject<Block> RED_QUICKSAND = BLOCKS.register("red_quicksand", () -> new QuicksandBlock(
             BlockBehaviour.Properties.copy(Blocks.RED_SAND),
             11098145,
-            QuicksandAPI.RED_QUICKSAND_BUCKET));
+            QuicksandItems.RED_QUICKSAND_BUCKET));
 	public static final RegistryObject<Block> QUICKSAND_CAULDRON = BLOCKS.register("quicksand_cauldron", () -> new QuicksandCauldronBlock(
             BlockBehaviour.Properties.copy(Blocks.CAULDRON),
-            QuicksandAPI.QUICKSAND_BUCKET,
+            QuicksandItems.QUICKSAND_BUCKET,
             QuicksandAPI.QUICKSAND_INTERACTIONS));
 	public static final RegistryObject<Block> RED_QUICKSAND_CAULDRON = BLOCKS.register("red_quicksand", () -> new QuicksandCauldronBlock(
             BlockBehaviour.Properties.copy(Blocks.CAULDRON),
-            QuicksandAPI.RED_QUICKSAND_BUCKET,
+            QuicksandItems.RED_QUICKSAND_BUCKET,
             QuicksandAPI.RED_QUICKSAND_INTERACTIONS));
     
     @SubscribeEvent
