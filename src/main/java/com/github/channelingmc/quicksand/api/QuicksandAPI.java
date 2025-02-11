@@ -6,6 +6,7 @@ import com.github.channelingmc.quicksand.common.levelgen.feature.QuicksandLakeFe
 import net.minecraft.core.Holder;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageScaling;
@@ -24,7 +25,8 @@ import java.util.Map;
 public class QuicksandAPI {
     
     public static final String ID = "quicksand";
-    public static final RegistryObject<DamageType> QUICKSAND_DAMAGE = RegistryObject.create(loc("quicksand"), Registries.DAMAGE_TYPE, ID);
+    public static final ResourceKey<DamageType> QUICKSAND_DAMAGE =
+            ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(ID, "quicksand"));
     
     //public static final DamageSource QUICKSAND_DMGSRC = new DamageSource("quicksand").bypassArmor();
     

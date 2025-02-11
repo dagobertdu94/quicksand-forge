@@ -5,7 +5,7 @@
   "block.quicksand.red_quicksand": "红流沙",
   "item.quicksand.red_quicksand_bucket": "红流沙桶",
   "block.quicksand.red_quicksand_cauldron": "装有红流沙的炼药锅",
-  "death.attack.quicksand": "%1$s被流沙淹没",
+  "death.attack.quicksand.quicksand": "%1$s被流沙淹没",
   "subtitles.entity.zombie.converted_to_husk": "僵尸：转化为尸壳",
   "subtitles.entity.drowned.converted_to_zombie": "溺尸：转化为僵尸"
 }

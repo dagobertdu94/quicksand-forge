@@ -7,8 +7,10 @@ import com.github.channelingmc.quicksand.api.tag.QuicksandTags;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -106,11 +108,8 @@ public class QuicksandBlock extends SandBlock implements BucketPickup {
 			entity.makeStuckInBlock(state, new Vec3(0.6D, 0.4D, 0.6D));
 		}
 		if (!entity.isSpectator() && hasEntityMoved(entity)) {
-			if (entity instanceof LivingEntity living &&
-				((QuicksandSubmergingEntity)entity).isSubmergedInQuicksand() &&
-				!canSurviveInQuicksand(living))
-			{
-				living.hurt(new DamageSource(QuicksandAPI.QUICKSAND_DAMAGE.getHolder().get()), 1F);
+			if (entity instanceof LivingEntity living && ((QuicksandSubmergingEntity)entity).isSubmergedInQuicksand() && !canSurviveInQuicksand(living)) {
+				living.hurt(new DamageSource(Holder.direct(world.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(QuicksandAPI.QUICKSAND_DAMAGE).get())), 1F);
 			}
 			if(world.getRandom().nextBoolean())
 				spawnParticles(world, state, new Vec3(entity.getX(), pos.getY(), entity.getZ()));

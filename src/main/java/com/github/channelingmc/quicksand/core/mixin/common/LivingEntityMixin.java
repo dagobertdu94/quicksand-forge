@@ -6,6 +6,9 @@ import com.github.channelingmc.quicksand.api.tag.QuicksandTags;
 import com.github.channelingmc.quicksand.common.QuicksandConfigs;
 import com.github.channelingmc.quicksand.common.block.QuicksandBlock;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -54,7 +57,7 @@ public abstract class LivingEntityMixin extends Entity implements QuicksandSubme
 	
 	@ModifyExpressionValue(method = "baseTick", at = @At(value = "FIELD", target = "Lnet/minecraft/world/damagesource/DamageSource;DROWN:Lnet/minecraft/world/damagesource/DamageSource;"))
 	private DamageSource baseTick$modifyQuicksandDrownDamageSource(DamageSource original) {
-		return this.isSubmergedInQuicksand() ? new DamageSource(QuicksandAPI.QUICKSAND_DAMAGE.getHolder().get()) : original;
+		return this.isSubmergedInQuicksand() ? new DamageSource(Holder.direct(level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(QuicksandAPI.QUICKSAND_DAMAGE).get())) : original;
 	}
 	
 }
